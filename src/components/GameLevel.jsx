@@ -19,6 +19,13 @@ const GameLevel = ({ levelId, onNavigate }) => {
   const [showPopup, setShowPopup] = useState(true);
   const [showMaterial, setShowMaterial] = useState(false);
 
+  // --- KODE BARU: RESET STATE SAAT LEVEL BERGANTI ---
+  useEffect(() => {
+    setShowPopup(true);
+    setShowMaterial(false);
+  }, [levelId]);
+  // ----------------------------------------------------
+
   // State untuk mini-game Planning
   const [collectedItems, setCollectedItems] = useState([]);
   const [feedback, setFeedback] = useState('');
