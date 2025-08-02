@@ -1,0 +1,368 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: #f0f4f8;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.game-container {
+  border: 4px solid #4a90e2;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.character-display {
+  font-size: 6rem;
+  margin: 2rem 0;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.menu-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #3b74b5;
+}
+
+.planning-game-area {
+  margin-top: 2rem;
+  border: 2px dashed #4a90e2;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.game-item {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.game-item:hover {
+  transform: scale(1.2);
+}
+
+.feedback-message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.mission-complete-message {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+}
+
+.mission-complete-message h3 {
+  color: #28a745;
+}
+
+.game-item.collected {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none; 
+}
+
+.analysis-game-area {
+  margin-top: 2rem;
+  border: 2px dashed #8258e8;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.analysis-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.analysis-item {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.analysis-item:hover {
+  transform: scale(1.1);
+}
+
+.analysis-result {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.analysis-order-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.order-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a90e2;
+  background-color: #e6f0ff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.design-game-area {
+  margin-top: 2rem;
+  border: 2px dashed #3b82f6;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.design-puzzle-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.design-blueprint {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  background-color: #e0e7ff;
+  border: 2px solid #3b82f6;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.blueprint-slot {
+  width: 50px;
+  height: 50px;
+  background-color: #c7d2fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border: 1px solid #93c5fd;
+  transition: all 0.3s ease;
+}
+
+.blueprint-slot.placed {
+  background-color: #8258e8;
+  color: white;
+}
+
+.design-pieces-box {
+  /* Hapus properti display: flex */
+  max-width: 200px;
+}
+
+.design-pieces-grid {
+  /* Tambahkan properti grid untuk tata letak 3x3 */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.design-piece {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.design-piece:hover {
+  transform: scale(1.1);
+}
+
+.implementation-game-area {
+  margin-top: 2rem;
+  border: 2px dashed #f6b33b;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.code-tower-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.code-tower {
+  display: flex;
+  flex-direction: column-reverse;
+  border: 2px solid #333;
+  width: 200px;
+  height: 250px;
+  background-color: #282c34;
+  padding: 5px;
+  justify-content: flex-start;
+}
+
+.code-slot {
+  height: 50px;
+  background-color: #444;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+  padding: 0 5px;
+}
+
+.code-slot.filled {
+  background-color: #61dafb;
+  color: #282c34;
+  font-weight: bold;
+}
+
+.code-pieces-box {
+  max-width: 200px;
+}
+
+.code-pieces-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.code-piece-button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.code-piece-button:hover {
+  transform: scale(1.05);
+}
+
+.testing-game-area {
+  margin-top: 2rem;
+  border: 2px dashed #10b981;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.testing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.testing-item {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.testing-item:hover {
+  transform: scale(1.1);
+}
+
+.maintenance-game-area {
+  margin-top: 2rem;
+  border: 2px dashed #eab308;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.maintenance-item {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.maintenance-item:hover {
+  transform: scale(1.1);
+}
+
+.kamus-container {
+  padding: 2rem;
+  text-align: left;
+}
+
+.kamus-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kamus-entry {
+  background-color: #f7f7f7;
+  border-left: 5px solid #4a90e2;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.kamus-entry:hover {
+  transform: translateY(-5px);
+}
+
+.kamus-entry h3 {
+  color: #4a90e2;
+  margin-top: 0;
+}
+
+.kamus-entry p {
+  color: #555;
+  line-height: 1.6;
+}
